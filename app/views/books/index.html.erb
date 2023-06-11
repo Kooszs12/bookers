@@ -1,42 +1,59 @@
-<h1>Books</h1>
+<html>
 
-<% @books.each do |book| %>
+  <head>
+      <title>WebCampBackendNew</title>
+  </head>
 
-  <p>Title</p>
-  <span>
-    <%= link_to book.title, book_path(book.id) %>
-  </span>
+  <body>
+    <h1>Books</h1>
 
-  <p>Body</p>
- <span>
-    <%= link_to book.body, book_path(book.id) %>
-  </span>
+    <teble>
+　    <thead>
+        <% @books.each do |book| %>
 
-  <%= link_to "Show", book_path(book.id) %>
-  <%= link_to "Edit", edit_book_path(book.id) %>
-  <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+        <tr>
+          <th>Title</th>
+          <tr>
+            <%= link_to book.title, book_path(book.id) %>
+          </tr>
 
-<% end %>
+          <th>Body</th>
+          </tr>
+            <%= link_to book.body, book_path(book.id) %>
+          </tr>
+        </tr>
 
-<h2>New book</h2>
+          <%= link_to "Show", book_path(book.id) %>
+          <%= link_to "Edit", edit_book_path(book.id) %>
+          <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
 
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+        <% end %>
+      </thead>
+    </teble>
+
+    <h2>New book</h2>
+
+    <% if @book.errors.any? %>
+      <%= @book.errors.count %>件のエラーが発生しました
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
 
-<%= form_with model: @book do |f| %>
+    <%= form_with model: @book do |f| %>
 
-<h4>Title</h4>
-<%= f.text_field :title %>
+    <h4>Title</h4>
+    <%= f.text_field :title %>
 
-<h4>Body</h4>
-<%= f.text_area :body %>
+    <h4>Body</h4>
+    <%= f.text_area :body %>
 
-<%= f.submit 'Create Book' %>
+    <%= f.submit 'Create Book' %>
 
-<% end %>
+    <% end %>
+
+  </body>
+
+</html>
