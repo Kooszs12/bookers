@@ -1,12 +1,19 @@
-<div>
-  <%= flash[:notice] %>
-</div>
+<html>
+  <head>
+      <title>WebCampBackendNew</title>
+  </head>
+  
+  <body>
+    <div>
+      <%= flash[:notice] %>
+    </div>
 
-<h2>Title</h2>
-<p><%= @book.title %></p>
+    <h2>Title<h2>
+    <p><%= @book.title %></p>
 
-<h2>Body</h2>
-<%= @book.body %>
+    <h2>Body</h2>
+    <%= @book.body %>
 
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to 'back', :back %>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
+    <%= link_to 'back', :back %>
+</html>
