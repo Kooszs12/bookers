@@ -1,17 +1,22 @@
 <body>
   <h1>Editing Book</h1>
 
-  <% if @book.errors.any? %>
-    <%= @book.errors.count %>件のエラーが発生しました
+  <div id = "error_explanation">
+    <% if @book.errors.any? %>
+    <h2><%= @book.errors.count %>error prohibited this from being saved:</h2>
     <ul>
       <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li>
+          ::marker
+          Title can't be blank
+          <%= message %>
+        </li>
       <% end %>
     </ul>
   <% end %>
 
   <%= form_with model: @book do |f| %>
-  
+
   <div class = "field">
     <ladel for = "book_taitle">Title</ladel>
     <%= f.text_field :title %>
