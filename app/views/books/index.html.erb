@@ -1,28 +1,21 @@
 <body>
   <h1>Books</h1>
-
+  
   <teble>
+    <% @books.each do |book| %>
     <thead>
-      <% @books.each do |book| %>
+      <th>Title</th>
+        <%= link_to book.title, book_path(book.id) %>
 
-      <tr>
-        <th>Title</th>
-          <tr>
-          <%= link_to book.title, book_path(book.id) %>
-        </tr>
-
-        <th>Body</th>
-        </tr>
-          <%= link_to book.body, book_path(book.id) %>
-        </tr>
-      </tr>
-
-        <%= link_to "Show", book_path(book.id) %>
-        <%= link_to "Edit", edit_book_path(book.id) %>
-        <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
-
-      <% end %>
+      <th>Body</th>
+        <%= link_to book.body, book_path(book.id) %>
     </thead>
+
+      <%= link_to "Show", book_path(book.id) %>
+      <%= link_to "Edit", edit_book_path(book.id) %>
+      <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+
+    <% end %>
   </teble>
 
   <h2>New book</h2>
