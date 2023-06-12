@@ -36,33 +36,19 @@ p, ul, ol {
   margin: 33px;
 }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0;
-  background-color: #c00;
-  color: #fff;
+.label {
+  display:block;
+  margin-top: 10px;
 }
 
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-#notice {
-  color: green;
+h1, h2 {
+  margin: 10px 0;
 }
 
 div.field, div.actions {
