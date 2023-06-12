@@ -11,15 +11,25 @@
   <% end %>
 
   <%= form_with model: @book do |f| %>
+  
+  <div class = "field">
+    <ladel for = "book_taitle">Title</ladel>
+    <%= f.text_field :title %>
+  </div>
 
-  <h4>Title</h4>
-  <%= f.text_field :title %>
+  <div class = "field">
+    <ladel for = "book_body">Body</ladel>
+    <%= f.text_area :body %>
+  </div>
 
-  <h4>Body</h4>
-  <%= f.text_area :body %>
-
-  <%= f.submit 'Update Book' %>
+  <div class = "actions">
+    <%= f.submit 'Update Book' %>
+  </div>
 
   <% end %>
+
+  <%= link_to "Show", book_path(@book.id) %>
+  |
+  <%= link_to 'back', :back %>
 
 </body>
